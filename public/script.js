@@ -37,3 +37,11 @@ function showMission(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showMission();
+
+function clearAll() {
+    // Get the list container
+    const listContainer = document.getElementById("list-container");
+    
+    // Clear all list items
+    listContainer.innerHTML = "";
+}
