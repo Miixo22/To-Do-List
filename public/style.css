@@ -24,39 +24,42 @@
     z-index: -1; /* Places the video behind the content */
 }
 
-
-.todo-list{
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
     max-width: 540px;
     height: 80vh;
     background: #fff;
     margin: 70px auto 20px;
-    padding: 40px 30px 70px;
+    padding: 40px 30px;
     border-radius: 10px;
-    overflow-y: auto; /* Adds a scrollbar */
+    position: relative;
 }
 
 .todo-list h2 {
-    font-family: "Playfair Display", serif;
-    color: red;
+    font-family: "Jersey 15", serif;
+    color: #8f00ff;
     display: flex;
     align-items: center;
     justify-content: center;  /* Centers the content horizontally */
     margin-bottom: 10px;
+    font-size: 38px;
     text-align: center;  /* Centers the text inside the h2 */
-    font-weight: 900; 
+    font-weight: 400; 
 }
 
 .todo-list h2 img
 {
-    width: 40px;
-    margin-left: 10px;
-    transform: skewX(-20deg); /* Skews the image horizontally */
+    width: 50px;
+    margin-left: 15px;
+    /*transform: skewX(-20deg);*/ 
 }
 
 .todo-list h4{
     font-family: "Dancing Script", serif;
-    color: grey;
+    color: #5d3f6a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,21 +87,30 @@ input{
     font-weight: 14px;
 }
 
-button{
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
-    padding: 10px 40px;
-    background: #ff5945;
+    padding: 10px 20px;
+    background: #a020f0;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+button i {
+    font-size: 16px; /* Adjust size of the icon */
 }
 
 button:hover {
-    background: #e04b38;
+    background: #c9a0ff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 ul li{
     list-style: none;
@@ -146,25 +158,44 @@ ul li span{
 }
 
 ul li span:hover{
-    background: #edeed0;
+    /* background: #edeed0; */
+    background: #f5f5f5;
 }
+
+#list-container {
+    flex: 1; /* Fills the available space */
+    overflow-y: auto; /* Enables vertical scrolling only when needed */
+    max-height: calc(100% - 200px); /* Keeps the scrollbar from reaching the clear button */
+    margin-bottom: 20px; /* Adds space below the scrollable area */
+    padding-right: 10px; /* Avoids overlap with the scrollbar */
+    scrollbar-width: thin; /* Modern scrollbar styling */
+    scrollbar-color: #c1c1c1 #f5f5f5;
+}
+
+/*------custom scrollbar-------*/  
+
+
 
 /* Clear All button at the bottom of the todo list */
 .clear-btn {
-    width: 100%;
-    padding: 12px 0;
-    background-color: #ff5945;
+    width: auto; /* Adjust width to fit the content */
+    background: #a020f0;
     color: #fff;
     border: none;
-    border-radius: 30px;
+    padding: 8px 15px;
     font-size: 16px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 20px; /* Keeps the button aligned with the bottom */
+    right: 20px; /* Moves the button to the right */
 }
 
 .clear-btn:hover {
-    background-color: #e04b38;
+    background-color: #c9a0ff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
