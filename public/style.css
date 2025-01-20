@@ -129,7 +129,9 @@ ul li{
     cursor: pointer;
     position: relative;
     word-wrap: break-word;
-    word-break: break-word;    
+    word-break: break-word; 
+    padding-right: 50px;
+    white-space: normal;
 }
 
 ul li::before{
@@ -155,8 +157,9 @@ ul li.checked::before{
 
 ul li span{
     position: absolute;
-    right: 0;
-    top: 5px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -164,6 +167,7 @@ ul li span{
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
+    background: transparent;
 }
 
 ul li span:hover{
@@ -173,7 +177,7 @@ ul li span:hover{
 #list-container {
     flex: 1; /* Fills the available space */
     overflow-y: auto; /* shows the scrollbar when the contenet overlaps */
-    max-height:100%; 
+    max-height: calc(100% - 200px);; 
     margin-bottom: 30px; 
     margin-top: -15px;
     padding-right: 10px;
@@ -204,17 +208,55 @@ ul li span:hover{
 }
 
 
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .todo-list {
-        max-width: 90%;
-        padding: 30px 20px;
+        max-width: 70%; /* Makes the container smaller */
+        padding: 25px 20px;
+        height: 60vh; /* Adjusts the height to be more flexible */
+        margin: 40px auto; /* Adjusts the margin for better alignment */
     }
+
     button {
-        padding: 8px 30px;
+        padding: 8px 15px;
         font-size: 14px;
     }
+
     ul li {
-        font-size: 15px;
+        font-size: 16px;
         padding: 10px 8px 10px 40px;
     }
 }
+
+@media (max-width: 480px) {
+    .todo-list {
+        width: 75%; /* Makes the todo list smaller on very small screens */
+        padding: 20px 15px;
+        margin: 30px auto;
+        height: 70vh;
+    }
+
+    .todo-list h2 {
+        font-size: 28px; /* Adjusts font size for smaller screens */
+    }
+
+    .todo-list h4 {
+        font-size: 14px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 8px 8px 8px 40px;
+    }
+}
+
