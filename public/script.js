@@ -90,4 +90,3 @@ function clearAll() {
     listContainer.innerHTML = ""; // Clears all tasks from the UI
     localStorage.removeItem("tasks"); // Removes all tasks from local storage
 }
-m
