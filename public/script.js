@@ -62,6 +62,18 @@ function addTaskToList(text, checked) {
     listContainer.insertBefore(li, listContainer.firstChild);
 }
 
+// Function to display the current date
+function displayDate() {
+    const dateContainer = document.getElementById('date-container');
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date().toLocaleDateString(undefined, options);
+    dateContainer.textContent = today;
+}
+
+// Call the function on page load
+displayDate();
+
+
 // Save task to local storage
 function saveTask(text, checked) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];

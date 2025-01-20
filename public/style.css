@@ -68,6 +68,15 @@
     font-weight: 400;
 }
 
+.date {
+    font-family: "Smooch Sans", serif;
+    color: grey;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -12px;
+    margin-bottom: 10px;
+}
+
 .row{
     display: flex;
     align-items: center;
@@ -103,7 +112,7 @@ button {
 }
 
 button i {
-    font-size: 16px; /* Adjust size of the icon */
+    font-size: 16px; /* Adjust icon size */
 }
 
 button:hover {
@@ -158,27 +167,22 @@ ul li span{
 }
 
 ul li span:hover{
-    /* background: #edeed0; */
     background: #f5f5f5;
 }
 
 #list-container {
     flex: 1; /* Fills the available space */
-    overflow-y: auto; /* Enables vertical scrolling only when needed */
-    max-height: calc(100% - 200px); /* Keeps the scrollbar from reaching the clear button */
-    margin-bottom: 20px; /* Adds space below the scrollable area */
-    padding-right: 10px; /* Avoids overlap with the scrollbar */
-    scrollbar-width: thin; /* Modern scrollbar styling */
-    scrollbar-color: #c1c1c1 #f5f5f5;
+    overflow-y: auto; /* shows the scrollbar when the contenet overlaps */
+    max-height:100%; 
+    margin-bottom: 30px; 
+    margin-top: -15px;
+    padding-right: 10px;
+    scrollbar-color: #c9a0ff #f5f5f5;
 }
-
-/*------custom scrollbar-------*/  
-
-
 
 /* Clear All button at the bottom of the todo list */
 .clear-btn {
-    width: auto; /* Adjust width to fit the content */
+    width: auto; 
     background: #a020f0;
     color: #fff;
     border: none;
@@ -190,8 +194,8 @@ ul li span:hover{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     position: absolute;
-    bottom: 20px; /* Keeps the button aligned with the bottom */
-    right: 20px; /* Moves the button to the right */
+    bottom: 20px; 
+    right: 20px;
 }
 
 .clear-btn:hover {
